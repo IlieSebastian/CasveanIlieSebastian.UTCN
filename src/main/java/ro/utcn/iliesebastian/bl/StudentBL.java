@@ -28,7 +28,5 @@ public class StudentBL {
 	}
 	public StudentPOJO save(StudentPOJO student) {
 		return studentService.save(student);
-	
-	
 	}
 }
