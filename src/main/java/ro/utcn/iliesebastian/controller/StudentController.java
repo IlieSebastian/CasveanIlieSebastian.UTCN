@@ -21,6 +21,11 @@ import ro.utcn.iliesebastian.pojo.StudentPOJO;
 public class StudentController {
 	@Autowired
 	private StudentBL studentBL;
+	@RequestMapping(value="/")
+	public String index()
+	{
+		return "index.html";
+	}
 	@GetMapping("/students")
 	public List<StudentPOJO> getAllStudents() {
 	    return studentBL.getAllStudents();
@@ -40,6 +45,13 @@ public class StudentController {
 	@PostMapping("/students")
 	public StudentPOJO createStudent(@Valid @RequestBody StudentPOJO student) {
 	    return studentBL.save(student);
+	}
+	@PutMapping("/students/{id}")
+	public void updateStudent(@PathVariable(value = "id") Integer id,@Valid @RequestBody StudentPOJO studentDetails) {
+		studentBL.updateStudent(id, studentDetails);
+		
+		
+		
 	}
 	
 }

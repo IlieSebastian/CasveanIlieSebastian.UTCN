@@ -8,4 +8,5 @@ public interface StudentService {
 	public String deleteById(Integer id);
 	public String findById(Integer id);
 	public StudentPOJO save(StudentPOJO student);
+	public void updateStudent(Integer id,StudentPOJO studentDetails);
 }

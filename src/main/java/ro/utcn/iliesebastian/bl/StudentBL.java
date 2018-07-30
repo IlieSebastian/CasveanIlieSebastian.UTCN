@@ -29,4 +29,7 @@ public class StudentBL {
 	public StudentPOJO save(StudentPOJO student) {
 		return studentService.save(student);
 	}
+	public void updateStudent(Integer id,StudentPOJO studentdetails) {
+		studentService.updateStudent(id,studentdetails);
+	}
 }
